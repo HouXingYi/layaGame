@@ -1,0 +1,6 @@
+.DS_Store
+npm-debug.log
+node_modules/
+release/Android/
+release/Eclipse/
+gh-pages/
