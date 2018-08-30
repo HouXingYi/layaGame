@@ -1,27 +1,36 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * 角色类
  */
-var Role = (function (_super) {
+var Role = /** @class */ (function (_super) {
     __extends(Role, _super);
     function Role() {
-        _super.call(this);
+        var _this = _super.call(this) || this;
         //射击类型
-        this.shootType = 0;
+        _this.shootType = 0;
         //射击间隔
-        this.shootInterval = 500;
+        _this.shootInterval = 500;
         //下次射击时间
-        this.shootTime = Laya.Browser.now() + 2000;
+        _this.shootTime = Laya.Browser.now() + 2000;
         //当前动作
-        this.action = "";
+        _this.action = "";
         //是否是子弹
-        this.isBullet = false;
+        _this.isBullet = false;
         //0普通，1子弹，2炸药，3补给品
-        this.heroType = 0;
+        _this.heroType = 0;
+        return _this;
         //初始化
         // this.init();
     }

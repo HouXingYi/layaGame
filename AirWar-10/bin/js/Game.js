@@ -1,7 +1,7 @@
 /**
  * 程序入口
  */
-var Game = (function () {
+var Game = /** @class */ (function () {
     function Game() {
         //子弹发射偏移位置表
         this.bulletPos = [[0], [-15, 15], [-30, 0, 30], [-45, -15, 15, 45]];

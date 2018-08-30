@@ -1,19 +1,28 @@
-var __extends = (this && this.__extends) || function (d, b) {
-    for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
-    function __() { this.constructor = d; }
-    d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
-};
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = function (d, b) {
+        extendStatics = Object.setPrototypeOf ||
+            ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+        return extendStatics(d, b);
+    }
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /**
  * 游戏UI类
  */
-var GameInfo = (function (_super) {
+var GameInfo = /** @class */ (function (_super) {
     __extends(GameInfo, _super);
     function GameInfo() {
-        _super.call(this);
+        var _this = _super.call(this) || this;
         //注册按钮点击事件，点击之后暂停游戏
-        this.pauseBtn.on(Laya.Event.CLICK, this, this.onPauseBtnClick);
+        _this.pauseBtn.on(Laya.Event.CLICK, _this, _this.onPauseBtnClick);
         //初始化UI显示
-        this.reset();
+        _this.reset();
+        return _this;
     }
     GameInfo.prototype.reset = function () {
         this.infoLabel.text = "";
